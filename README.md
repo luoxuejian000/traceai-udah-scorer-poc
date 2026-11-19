@@ -235,3 +235,4 @@ MIT License
 > - **知识产权**：本仓库代码采用 [待定许可证，例如 MIT License] 授权（详见 `LICENSE` 文件）；`thinkcheck_harmony`、`thinkcheck_agent`、`ochr` 等核心引擎目录的知识产权归属其原始作者，本 POC 仅作适配与封装。
 >
 > 如有商业合作意向，请联系广好和Rastislav Drahoš。
+设计和思考过程中使用了AI辅助思考。
