@@ -236,4 +236,4 @@ MIT License
 >
 > 如有商业合作意向，请联系广好和Rastislav Drahoš。
 
-设计和思考过程中使用了AI辅助。
+李广好在设计和思考过程中使用了AI辅助。所有代码都经过Rastislav逐字逐句人工审核。
