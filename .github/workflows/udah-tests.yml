@@ -1,0 +1,32 @@
+name: udah-scorer tests
+
+on:
+  push:
+    paths: ["udah-scorer/**", "trajectory_v3_ultra.py", ".github/workflows/udah-tests.yml"]
+  pull_request:
+    paths: ["udah-scorer/**", "trajectory_v3_ultra.py", ".github/workflows/udah-tests.yml"]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Build the wheel and install it
+        working-directory: udah-scorer
+        run: |
+          python -m pip install build
+          python -m build
+          python -m pip install --find-links dist udah-scorer
+      - name: Run the tests against the installed wheel
+        working-directory: udah-scorer
+        run: python -X utf8 -m unittest discover -s tests -v
+      - name: Check the installed core
+        run: udah verify-core
