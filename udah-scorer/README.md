@@ -1,7 +1,7 @@
 # udah-scorer
 
 Deterministic U/D/A/H scores for multi-turn conversations and for traceAI exports.
-Standard library only, Python 3.9 or later, no model calls.
+Standard library only, Python 3.10 or later, no model calls.
 
 ## What it computes
 

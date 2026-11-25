@@ -7,7 +7,7 @@ name = "udah-scorer"
 version = "0.1.0"
 description = "Deterministic U/D/A/H scores for multi-turn conversations and traceAI exports, standard library only."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Guanghao Li"}]
 keywords = ["llm", "evaluation", "multi-turn", "traceai", "opentelemetry"]
