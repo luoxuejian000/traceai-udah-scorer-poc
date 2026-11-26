@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "udah-scorer"
+version = "0.1.0"
+description = "Deterministic U/D/A/H scores for multi-turn conversations and traceAI exports, standard library only."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Guanghao Li"}]
+keywords = ["llm", "evaluation", "multi-turn", "traceai", "opentelemetry"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+Source = "https://github.com/luoxuejian000/traceai-udah-scorer-poc"
+
+[project.scripts]
+udah = "udah_scorer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,32 @@
+name: udah-scorer publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    if: startsWith(github.event.release.tag_name, 'udah-scorer-v')
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build
+        working-directory: udah-scorer
+        run: |
+          python -m pip install build
+          python -m build
+      - name: Test the built wheel
+        working-directory: udah-scorer
+        run: |
+          python -m pip install --find-links dist udah-scorer
+          python -X utf8 -m unittest discover -s tests
+          udah verify-core
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: udah-scorer/dist
