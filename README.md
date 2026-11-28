@@ -1,4 +1,7 @@
 TraceAI U/D/A/H 评估适配器 (POC)
+[![PyPI version](https://img.shields.io/pypi/v/udah-scorer.svg?style=flat-square)](https://pypi.org/project/udah-scorer/)
+[![Downloads](https://static.pepy.tech/badge/udah-scorer?style=flat-square)](https://pepy.tech/project/udah-scorer)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg?style=flat-square)](https://www.python.org/)
 
 本项目是为 future-agi/traceAI#185 提交的范围限定概念验证（Proof of Concept）。
 
